@@ -2,967 +2,1181 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="موقع تفاعلي لاختبار معلوماتك في كرة القدم: تحديات، أسئلة، معلومات تاريخية، وإحصائيات مع أنيميشن جميلة.">
-    <meta name="keywords" content="اختبار كرة قدم, معلومات كرة القدم, أسئلة كرة القدم, اختبار تفاعلي, تاريخ الكرة, أبطال الدوري, كأس العالم, أفضل اللاعبين">
-    <meta name="author" content="مختبر معلومات كرة القدم">
-    <meta property="og:title" content="اختبار معلومات كرة القدم التفاعلي">
-    <meta property="og:description" content="اختبر معلوماتك في كرة القدم مع اختبارات تفاعلية ممتعة ومعلومات تاريخية شيقة.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1556056504-5c7696c4c28d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اختبار معلومات كرة القدم</title>
+    <title>⚽ اختبار كرة القدم التفاعلي ✨</title>
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9NL1FPXD2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-B9NL1FPXD2');
-    </script>
-    
+    <!-- Font Awesome للرموز -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #1e40af;
-            --primary-dark: #1e3a8a;
-            --primary-light: #3b82f6;
-            --secondary: #dc2626;
-            --secondary-dark: #b91c1c;
-            --accent: #fbbf24;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --light: #f8fafc;
-            --dark: #0f172a;
-            --gray: #64748b;
-            --grass-green: #22c55e;
-            --pitch-green: #16a34a;
-            --background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-            --card-bg: rgba(255, 255, 255, 0.95);
-            --text: #0f172a;
-            --border-radius: 16px;
-            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --sidebar-width: 280px;
+            /* ألوان زاهية وجذابة */
+            --primary: #FF6B6B;
+            --primary-dark: #FF5252;
+            --primary-light: #FF8E8E;
+            --secondary: #4ECDC4;
+            --secondary-dark: #26A69A;
+            --accent: #FFD166;
+            --success: #06D6A0;
+            --warning: #FFD166;
+            --danger: #EF476F;
+            --light: #F8F9FA;
+            --dark: #1A1A2E;
+            --blue: #118AB2;
+            --purple: #7209B7;
+            --pink: #F72585;
+            
+            /* تدرجات ألوان إضافية */
+            --gradient-primary: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            --gradient-secondary: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            --gradient-accent: linear-gradient(135deg, #FFD166 0%, #FFB347 100%);
+            --gradient-dark: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+            --gradient-rainbow: linear-gradient(90deg, #FF6B6B, #FFD166, #06D6A0, #118AB2, #7209B7);
+            
+            --border-radius: 20px;
+            --box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            --box-shadow-light: 0 8px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-fast: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            background: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
+            background: var(--gradient-dark);
+            color: white;
             min-height: 100vh;
-            display: flex;
+            overflow-x: hidden;
             position: relative;
         }
 
-        body::before {
-            content: '';
+        /* أنيميشن الخلفية */
+        .background-animation {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 30%);
             z-index: -1;
+            overflow: hidden;
         }
 
+        .ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, white, var(--accent));
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255, 209, 102, 0.5);
+            animation: float 15s infinite linear;
+        }
+
+        .ball:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+            animation-duration: 20s;
+        }
+
+        .ball:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            animation-delay: 3s;
+            animation-duration: 25s;
+            background: radial-gradient(circle at 30% 30%, white, var(--secondary));
+        }
+
+        .ball:nth-child(3) {
+            top: 80%;
+            left: 20%;
+            animation-delay: 6s;
+            animation-duration: 18s;
+            background: radial-gradient(circle at 30% 30%, white, var(--primary));
+        }
+
+        .ball:nth-child(4) {
+            top: 30%;
+            left: 70%;
+            animation-delay: 9s;
+            animation-duration: 22s;
+            background: radial-gradient(circle at 30% 30%, white, var(--success));
+        }
+
+        .confetti {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: var(--accent);
+            animation: confetti-fall 5s infinite linear;
+            opacity: 0.7;
+        }
+
+        .confetti:nth-child(5) { left: 10%; animation-delay: 0s; background: var(--primary); }
+        .confetti:nth-child(6) { left: 20%; animation-delay: 1s; background: var(--secondary); }
+        .confetti:nth-child(7) { left: 30%; animation-delay: 2s; background: var(--success); }
+        .confetti:nth-child(8) { left: 40%; animation-delay: 3s; background: var(--warning); }
+        .confetti:nth-child(9) { left: 50%; animation-delay: 4s; background: var(--danger); }
+        .confetti:nth-child(10) { left: 60%; animation-delay: 5s; background: var(--purple); }
+
+        /* أنيميشن النصوص */
+        .text-gradient {
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s infinite alternate;
+        }
+
+        /* الأنيميشنات الأساسية */
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, 100px) rotate(90deg); }
+            50% { transform: translate(200px, 0) rotate(180deg); }
+            75% { transform: translate(100px, -100px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* الشريط الجانبي */
         .sidebar {
-            width: var(--sidebar-width);
-            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            height: 100vh;
             position: fixed;
-            top: 0;
             right: 0;
-            overflow-y: auto;
-            padding: 20px 0;
-            box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
+            padding: 30px 20px;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--accent);
+            transform: translateX(100%);
             transition: var(--transition);
+            overflow-y: auto;
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
             text-align: center;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 20px;
-            position: relative;
-            animation: bounceIn 1s ease;
+            margin-bottom: 40px;
+            animation: slideIn 0.8s ease;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
         }
 
         .logo i {
-            margin-left: 10px;
+            font-size: 3rem;
             color: var(--accent);
+            animation: rotate 10s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 209, 102, 0.5));
         }
 
-        .sidebar-nav ul {
-            list-style: none;
-            padding: 0 15px;
-        }
-
-        .sidebar-nav ul li {
-            margin-bottom: 8px;
-        }
-
-        .sidebar-nav ul li a {
+        /* زر القائمة */
+        .menu-btn {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 15px 20px;
-            border-radius: 12px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
             transition: var(--transition);
-            display: block;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid transparent;
+            animation: pulse 2s infinite;
         }
 
-        .sidebar-nav ul li a:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateX(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
+        .menu-btn:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
         }
 
-        .support-sidebar {
-            margin-top: 30px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius);
-            text-align: center;
-            border: 2px solid var(--accent);
-        }
-
-        .support-sidebar h3 {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            color: var(--accent);
-        }
-
-        .support-number {
-            font-size: 1.4rem;
-            font-weight: 900;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 15px;
-            border-radius: 8px;
-            direction: ltr;
-            display: inline-block;
-            margin: 10px 0;
-            border: 2px solid var(--accent);
-        }
-
+        /* المحتوى الرئيسي */
         .main-content {
-            flex: 1;
-            margin-right: var(--sidebar-width);
+            margin-right: 0;
             padding: 20px;
-            max-width: calc(100% - var(--sidebar-width));
+            min-height: 100vh;
+            animation: fadeIn 1s ease;
         }
 
         .section {
-            margin-bottom: 40px;
-            padding: 30px;
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: var(--border-radius);
+            padding: 40px 30px;
+            margin-bottom: 30px;
             box-shadow: var(--box-shadow);
-            animation: fadeInUp 0.8s ease;
             border: 2px solid transparent;
-            transition: var(--transition);
+            background-clip: padding-box;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 0.8s ease;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-rainbow);
+            animation: gradient-shift 3s infinite linear;
         }
 
         .section:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 25px;
-            color: var(--primary-dark);
             position: relative;
-            padding-bottom: 15px;
             display: flex;
             align-items: center;
+            gap: 15px;
         }
 
         .section-title::after {
             content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            margin-top: 10px;
-            border-radius: 5px;
-            position: absolute;
-            bottom: 0;
-            right: 0;
+            flex: 1;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+            margin-right: 15px;
         }
 
-        .section-title i {
-            margin-left: 15px;
-            color: var(--secondary);
-        }
-
+        /* قسم الهيرو */
         .hero {
             text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
-            background-size: cover;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(78, 205, 196, 0.2));
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
             position: relative;
             overflow: hidden;
-            margin-bottom: 30px;
-            border-radius: var(--border-radius);
-            color: white;
-            animation: heroEntrance 1.2s ease;
+        }
+
+        .hero::before {
+            content: '⚽';
+            position: absolute;
+            font-size: 20rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 30s linear infinite;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            animation: bounce 2s infinite;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 800px;
-            margin: 0 auto 20px;
-            color: rgba(255, 255, 255, 0.9);
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
         }
 
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+        /* قسم الاسم */
+        .name-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(33, 33, 74, 0.8));
+            border-radius: var(--border-radius);
+            margin: 40px auto;
+            max-width: 500px;
+            box-shadow: var(--box-shadow);
+            border: 2px solid var(--accent);
+            animation: pulse 3s infinite;
         }
 
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            box-shadow: 0 6px 15px rgba(220, 38, 38, 0.4);
-            border: 2px solid transparent;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.6);
-            background: linear-gradient(135deg, var(--secondary-dark), var(--secondary));
-            border-color: var(--accent);
-        }
-
-        .cta-button.secondary {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
-        }
-
-        .cta-button.secondary:hover {
-            background: white;
-            color: var(--primary-dark);
-        }
-
-        .cta-button i {
-            margin-right: 10px;
-            font-size: 1.2rem;
+        .name-input-container {
+            position: relative;
+            margin: 30px 0;
         }
 
         .name-input {
-            margin: 30px auto;
-            max-width: 400px;
-            position: relative;
-        }
-
-        .name-input input {
             width: 100%;
-            padding: 18px 30px;
-            border-radius: 50px;
-            border: 3px solid var(--accent);
-            font-size: 1.2rem;
+            padding: 22px 30px;
+            font-size: 1.3rem;
             font-weight: 700;
+            background: var(--gradient-dark);
+            border: 3px solid var(--accent);
+            border-radius: 50px;
+            color: white;
             text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--primary-dark);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             transition: var(--transition);
-            cursor: text;
+            box-shadow: 0 10px 30px rgba(255, 209, 102, 0.3);
         }
 
-        .name-input input::placeholder {
-            color: var(--gray);
-            font-weight: normal;
-        }
-
-        .name-input input:focus {
+        .name-input:focus {
             outline: none;
-            background: white;
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(251, 191, 36, 0.4);
-            border-color: var(--secondary);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 209, 102, 0.5);
+            border-color: var(--success);
         }
 
-        .name-input i {
+        .name-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .name-icon {
             position: absolute;
-            left: 20px;
+            left: 25px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--primary);
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            color: var(--accent);
+            animation: bounce 2s infinite;
         }
 
+        /* قسم المميزات */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .feature-card {
-            background: var(--card-bg);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
+            padding: 35px 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid transparent;
             transition: var(--transition);
             position: relative;
-            text-align: center;
-            padding: 25px 20px;
-            border-top: 5px solid var(--primary);
-            animation: cardEntrance 0.6s ease;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-primary);
         }
 
         .feature-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
+            font-size: 4rem;
+            margin-bottom: 25px;
             display: inline-block;
-            height: 90px;
-            width: 90px;
-            line-height: 90px;
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(59, 130, 246, 0.2));
-            border-radius: 50%;
-            transition: var(--transition);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: bounce 3s infinite;
         }
 
-        .feature-card:hover .feature-icon {
-            transform: rotate(360deg) scale(1.1);
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
             color: white;
         }
 
+        /* بطاقات التحديات */
         .challenge-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .challenge-card {
-            background: var(--card-bg);
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(33, 33, 74, 0.9));
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            position: relative;
             border: 3px solid transparent;
-            animation: cardEntrance 0.8s ease;
+            animation: slideIn 0.8s ease;
         }
 
         .challenge-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
             border-color: var(--accent);
         }
 
-        .challenge-card-header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        .challenge-header {
+            background: var(--gradient-primary);
             color: white;
-            padding: 25px;
+            padding: 30px 25px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .challenge-card-header h3 {
-            font-size: 1.6rem;
-            margin-bottom: 5px;
+        .challenge-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .challenge-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
             position: relative;
             z-index: 1;
         }
 
         .difficulty {
             display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 8px 20px;
+            border-radius: 25px;
             font-size: 0.9rem;
-            font-weight: 700;
-            margin-top: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .difficulty.easy {
-            background: var(--success);
-            color: white;
+        .difficulty.easy { background: var(--success); }
+        .difficulty.medium { background: var(--warning); color: var(--dark); }
+        .difficulty.hard { background: var(--danger); }
+
+        .challenge-body {
+            padding: 35px 30px;
         }
 
-        .difficulty.medium {
-            background: var(--warning);
-            color: white;
-        }
-
-        .difficulty.hard {
-            background: var(--danger);
-            color: white;
-        }
-
-        .challenge-card-body {
-            padding: 25px;
-        }
-
-        .challenge-card-body ul {
+        .challenge-features {
             list-style: none;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
-        .challenge-card-body ul li {
-            padding: 12px 0;
-            border-bottom: 1px dashed #eee;
+        .challenge-features li {
+            padding: 15px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
-            transition: var(--transition);
-            font-size: 1rem;
+            gap: 15px;
+            font-size: 1.05rem;
+            transition: var(--transition-fast);
         }
 
-        .challenge-card-body ul li:hover {
-            background: #f9f9f9;
-            padding-right: 10px;
+        .challenge-features li:hover {
+            transform: translateX(10px);
+            color: var(--accent);
         }
 
-        .challenge-card-body ul li i {
-            margin-left: 10px;
-            color: var(--primary);
-            font-size: 1.1rem;
+        .challenge-features li i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
         }
 
-        .test-button {
-            display: block;
+        .start-btn {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            padding: 20px;
+            background: var(--gradient-primary);
             color: white;
             border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
-            text-align: center;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            position: relative;
+            overflow: hidden;
         }
 
-        .test-button:hover {
-            background: linear-gradient(135deg, var(--secondary-dark), var(--secondary));
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.4);
+        .start-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition);
         }
 
+        .start-btn:hover::before {
+            left: 100%;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+        }
+
+        /* قسم الاختبار */
         .quiz-section {
-            padding: 30px 0;
             display: none;
+            animation: fadeIn 0.8s ease;
         }
 
         .quiz-container {
-            background: var(--card-bg);
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(33, 33, 74, 0.95));
             border-radius: var(--border-radius);
-            padding: 30px;
+            padding: 40px 35px;
             box-shadow: var(--box-shadow);
             margin: 0 auto;
             max-width: 900px;
-            animation: quizEntrance 0.6s ease;
+            border: 3px solid var(--accent);
             position: relative;
             overflow: hidden;
-            border: 3px solid var(--primary);
+        }
+
+        .quiz-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-rainbow);
+            animation: gradient-shift 3s infinite linear;
         }
 
         .quiz-header {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eee;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
         }
 
         .quiz-title {
-            font-size: 2rem;
-            color: var(--primary-dark);
-            margin-bottom: 10px;
-        }
-
-        .quiz-description {
-            color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 3s infinite linear;
         }
 
         .quiz-progress {
-            height: 16px;
-            background: #f0f0f0;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             overflow: hidden;
             position: relative;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .quiz-progress-bar {
+        .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, var(--grass-green), var(--primary));
+            background: var(--gradient-primary);
             width: 0%;
-            transition: width 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: width 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border-radius: 10px;
             position: relative;
             overflow: hidden;
         }
 
-        .quiz-progress-text {
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 2s infinite;
+        }
+
+        .progress-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 0.9rem;
-            color: var(--dark);
-            font-weight: 700;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .question-container {
+            margin-bottom: 40px;
         }
 
         .question {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary-dark);
-            line-height: 1.5;
-            padding: 20px;
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(59, 130, 246, 0.1));
-            border-radius: 12px;
-            border-right: 5px solid var(--primary);
-            animation: questionAppear 0.5s ease;
+            margin-bottom: 35px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border-right: 5px solid var(--accent);
+            line-height: 1.6;
+            animation: slideIn 0.5s ease;
         }
 
-        .options {
+        .options-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-bottom: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .option {
-            padding: 20px 25px;
-            background: #f8fafc;
-            border: 3px solid #e2e8f0;
-            border-radius: 12px;
+            padding: 25px 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
             align-items: center;
+            gap: 20px;
             font-size: 1.2rem;
             position: relative;
             overflow: hidden;
         }
 
         .option:hover {
-            background: #e2e8f0;
-            transform: translateX(10px);
-            border-color: var(--primary-light);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(15px) scale(1.03);
+            border-color: var(--accent);
         }
 
         .option.selected {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            background: var(--gradient-primary);
             color: white;
             border-color: var(--primary);
-            transform: translateX(10px);
-            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+            transform: translateX(15px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
         }
 
         .option.correct {
-            background: linear-gradient(135deg, var(--success), #34d399);
-            color: white;
+            background: var(--gradient-secondary);
             border-color: var(--success);
+            animation: pulse 0.5s;
         }
 
         .option.incorrect {
-            background: linear-gradient(135deg, var(--danger), #f87171);
-            color: white;
+            background: linear-gradient(135deg, #EF476F, #FF6B6B);
             border-color: var(--danger);
+            animation: shake 0.5s;
         }
 
         .option-prefix {
-            margin-left: 20px;
-            font-weight: 700;
-            background: rgba(0, 0, 0, 0.1);
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            transition: var(--transition);
-            font-size: 1.1rem;
+            font-weight: 900;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            transition: var(--transition-fast);
         }
 
         .option.selected .option-prefix,
         .option.correct .option-prefix,
         .option.incorrect .option-prefix {
             background: rgba(255, 255, 255, 0.3);
-            color: white;
         }
 
         .quiz-navigation {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 30px;
-            padding-top: 25px;
-            border-top: 2px solid #eee;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 3px solid rgba(255, 255, 255, 0.1);
         }
 
-        .nav-button {
-            padding: 15px 35px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        .nav-btn {
+            padding: 18px 40px;
+            background: var(--gradient-primary);
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
-            font-weight: 700;
             display: flex;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(30, 64, 175, 0.3);
-            font-size: 1.1rem;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
         }
 
-        .nav-button:hover:not(:disabled) {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        .nav-btn:hover:not(:disabled) {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
         }
 
-        .nav-button:disabled {
-            background: #cbd5e1;
+        .nav-btn:disabled {
+            background: rgba(255, 255, 255, 0.1);
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
 
-        .nav-button i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        .quiz-timer {
-            background: var(--light);
-            padding: 12px 25px;
-            border-radius: 50px;
+        .timer {
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
             font-weight: 900;
-            color: var(--primary-dark);
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 2px solid #e2e8f0;
-            font-size: 1.2rem;
+            gap: 12px;
+            border: 3px solid transparent;
+            transition: var(--transition-fast);
         }
 
-        .quiz-timer.warning {
-            background: #fef3c7;
-            color: #92400e;
-            border-color: #fbbf24;
+        .timer.warning {
+            background: rgba(255, 209, 102, 0.2);
+            border-color: var(--warning);
+            animation: pulse 1s infinite;
         }
 
-        .quiz-timer.danger {
-            background: #fee2e2;
-            color: #991b1b;
-            border-color: #f87171;
+        .timer.danger {
+            background: rgba(239, 71, 111, 0.2);
+            border-color: var(--danger);
+            animation: pulse 0.5s infinite;
+        }
+
+        /* قسم النتائج */
+        .results-section {
+            display: none;
+            animation: fadeIn 1s ease;
         }
 
         .results-container {
-            display: none;
-            text-align: center;
-            padding: 50px;
-            background: var(--card-bg);
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(33, 33, 74, 0.95));
             border-radius: var(--border-radius);
+            padding: 50px 40px;
             box-shadow: var(--box-shadow);
-            margin: 40px auto;
+            margin: 0 auto;
             max-width: 900px;
-            animation: resultsEntrance 0.8s ease;
+            text-align: center;
+            border: 3px solid transparent;
+            background-clip: padding-box;
             position: relative;
             overflow: hidden;
-            border: 3px solid transparent;
-            background: linear-gradient(white, white) padding-box,
-                        linear-gradient(135deg, var(--primary), var(--secondary), var(--accent)) border-box;
+        }
+
+        .results-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-rainbow);
+            animation: gradient-shift 3s infinite linear;
         }
 
         .results-title {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 25px;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 3s infinite linear;
         }
 
-        .results-score {
-            font-size: 4.5rem;
+        .score-display {
+            font-size: 5rem;
             font-weight: 900;
-            color: var(--primary);
-            margin: 25px 0;
+            margin: 30px 0;
             position: relative;
             display: inline-block;
-            text-shadow: 0 3px 10px rgba(30, 64, 175, 0.3);
-            animation: scoreReveal 1s ease;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: bounce 1s infinite;
+        }
+
+        .score-display::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 5px;
+            background: var(--gradient-rainbow);
+            border-radius: 5px;
+            animation: gradient-shift 3s infinite linear;
         }
 
         .results-message {
             font-size: 1.8rem;
-            margin-bottom: 35px;
-            color: var(--dark);
-            padding: 20px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(59, 130, 246, 0.1));
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            line-height: 1.6;
         }
 
-        .results-message span {
-            color: var(--secondary);
-            font-weight: 700;
+        .player-name {
+            color: var(--accent);
+            font-weight: 800;
+            text-shadow: 0 0 20px rgba(255, 209, 102, 0.5);
         }
 
         .results-details {
-            margin-bottom: 35px;
-            text-align: right;
-            background: #f8fafc;
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: var(--border-radius);
-            border: 2px solid #e2e8f0;
+            padding: 35px;
+            margin-bottom: 40px;
+            text-align: right;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
-        .results-details h3 {
-            margin-bottom: 25px;
-            color: var(--primary-dark);
-            font-size: 1.6rem;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #eee;
-        }
-
-        .results-details ul {
+        .results-list {
             list-style: none;
         }
 
-        .results-details ul li {
-            padding: 18px;
-            border-bottom: 2px solid #eee;
+        .result-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: var(--transition);
-            border-radius: 8px;
+            transition: var(--transition-fast);
         }
 
-        .results-details ul li.correct {
-            color: var(--success);
-            background: rgba(16, 185, 129, 0.1);
-            border-left: 5px solid var(--success);
+        .result-item:hover {
+            transform: translateX(-10px);
         }
 
-        .results-details ul li.incorrect {
-            color: var(--danger);
-            background: rgba(239, 68, 68, 0.1);
-            border-left: 5px solid var(--danger);
+        .result-item.correct {
+            background: rgba(6, 214, 160, 0.1);
+            border-right: 5px solid var(--success);
         }
 
-        .results-details ul li i {
-            margin-left: 15px;
-            font-size: 1.4rem;
+        .result-item.incorrect {
+            background: rgba(239, 71, 111, 0.1);
+            border-right: 5px solid var(--danger);
         }
 
         .results-actions {
             display: flex;
             justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
         }
 
-        .action-button {
-            padding: 18px 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        .action-btn {
+            padding: 20px 45px;
+            background: var(--gradient-primary);
             color: white;
             border: none;
-            border-radius: 50px;
+            border-radius: 15px;
             font-size: 1.2rem;
+            font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
             align-items: center;
-            font-weight: 700;
-            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
+            gap: 15px;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
         }
 
-        .action-button:hover {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        .action-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.6);
         }
 
-        .action-button.secondary {
-            background: transparent;
-            border: 3px solid var(--primary);
-            color: var(--primary);
-            box-shadow: none;
+        .action-btn.secondary {
+            background: var(--gradient-secondary);
+            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.4);
         }
 
-        .action-button.secondary:hover {
-            background: var(--primary);
-            color: white;
+        .action-btn.secondary:hover {
+            box-shadow: 0 20px 40px rgba(78, 205, 196, 0.6);
         }
 
-        footer {
-            background: linear-gradient(135deg, var(--primary-dark), var(--dark));
-            color: white;
+        /* الفوتر */
+        .footer {
             text-align: center;
-            padding: 40px 0;
-            margin-top: 40px;
-            border-radius: var(--border-radius);
+            padding: 40px 20px;
+            margin-top: 60px;
+            background: rgba(26, 26, 46, 0.9);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
             border-top: 5px solid var(--accent);
         }
 
         .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 900;
             margin-bottom: 20px;
-            color: var(--accent);
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
 
-        .mobile-menu-btn {
-            display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .social-icon {
             width: 55px;
             height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
             transition: var(--transition);
-            border: 2px solid var(--accent);
-            font-size: 1.3rem;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
         }
 
+        .social-icon:hover {
+            transform: translateY(-10px) rotate(15deg);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6);
+        }
+
+        /* رموز تعبيرية متحركة */
+        .emoji-float {
+            position: fixed;
+            font-size: 2.5rem;
+            z-index: -1;
+            animation: float 20s infinite linear;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        .emoji-float:nth-child(1) { content: '⚽'; top: 10%; left: 10%; animation-delay: 0s; color: var(--accent); }
+        .emoji-float:nth-child(2) { content: '🏆'; top: 20%; left: 80%; animation-delay: 5s; color: var(--warning); }
+        .emoji-float:nth-child(3) { content: '⭐'; top: 60%; left: 15%; animation-delay: 10s; color: var(--accent); }
+        .emoji-float:nth-child(4) { content: '👑'; top: 80%; left: 70%; animation-delay: 15s; color: var(--warning); }
+        .emoji-float:nth-child(5) { content: '🔥'; top: 40%; left: 85%; animation-delay: 3s; color: var(--danger); }
+        .emoji-float:nth-child(6) { content: '🎯'; top: 70%; left: 30%; animation-delay: 7s; color: var(--success); }
+        .emoji-float:nth-child(7) { content: '💫'; top: 30%; left: 40%; animation-delay: 12s; color: var(--secondary); }
+
+        /* تحسينات للهاتف */
         @media (max-width: 768px) {
             .sidebar {
-                position: fixed;
-                width: 280px;
-                height: 100vh;
-                right: -280px;
-                transition: right 0.5s ease;
+                width: 100%;
+                padding: 25px 20px;
             }
             
-            .sidebar.active {
-                right: 0;
+            .menu-btn {
+                top: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
             }
             
             .main-content {
-                margin-right: 0;
-                max-width: 100%;
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
+                padding: 15px;
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .section {
-                padding: 25px;
+                padding: 25px 20px;
             }
             
-            .features-grid, .challenge-cards {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .features-grid,
+            .challenge-cards {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .quiz-container,
+            .results-container {
+                padding: 25px 20px;
+            }
+            
+            .question {
+                font-size: 1.4rem;
+                padding: 20px;
+            }
+            
+            .option {
+                padding: 20px;
+                font-size: 1.1rem;
+            }
+            
+            .score-display {
+                font-size: 4rem;
+            }
+            
+            .nav-btn,
+            .action-btn {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+            
+            .results-actions {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes heroEntrance {
-            from { opacity: 0; transform: scale(0.9) translateY(50px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        @keyframes quizEntrance {
-            from { opacity: 0; transform: scale(0.8) rotate(-5deg); }
-            to { opacity: 1; transform: scale(1) rotate(0); }
-        }
-
-        @keyframes resultsEntrance {
-            from { opacity: 0; transform: translateY(100px) scale(0.5); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        @keyframes scoreReveal {
-            0% { transform: scale(0); }
-            70% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes questionAppear {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
+        /* تأثيرات خاصة للهاتف */
+        @media (hover: none) {
+            .feature-card:hover,
+            .challenge-card:hover,
+            .option:hover,
+            .start-btn:hover,
+            .nav-btn:hover,
+            .action-btn:hover,
+            .social-icon:hover {
+                transform: none;
+            }
+            
+            .feature-card:active,
+            .challenge-card:active,
+            .option:active,
+            .start-btn:active,
+            .nav-btn:active,
+            .action-btn:active {
+                transform: scale(0.98);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- زر القائمة للجوال -->
-    <div class="mobile-menu-btn" id="mobile-menu-btn">
+    <!-- أنيميشن الخلفية -->
+    <div class="background-animation">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+    </div>
+
+    <!-- رموز تعبيرية متحركة -->
+    <div class="emoji-float">⚽</div>
+    <div class="emoji-float">🏆</div>
+    <div class="emoji-float">⭐</div>
+    <div class="emoji-float">👑</div>
+    <div class="emoji-float">🔥</div>
+    <div class="emoji-float">🎯</div>
+    <div class="emoji-float">💫</div>
+
+    <!-- زر القائمة -->
+    <div class="menu-btn" id="menuBtn">
         <i class="fas fa-futbol"></i>
     </div>
 
@@ -970,147 +1184,225 @@
     <aside class="sidebar" id="sidebar">
         <div class="logo">
             <i class="fas fa-futbol"></i>
-            <span>كرة القدم</span>
+            <h1>⚽ كرة القدم ✨</h1>
+            <p>🏆 اختبر معلوماتك ⚽</p>
         </div>
         
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
-                <li><a href="#challenges"><i class="fas fa-trophy"></i> التحديات</a></li>
-                <li><a href="#support"><i class="fas fa-headset"></i> الدعم</a></li>
+        <nav>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 15px;">
+                    <a href="#home" style="display: block; padding: 15px 20px; background: rgba(255,255,255,0.1); border-radius: 15px; color: white; text-decoration: none; transition: var(--transition);" 
+                       onmouseover="this.style.transform='translateX(-10px)'; this.style.background='rgba(255,107,107,0.3)';" 
+                       onmouseout="this.style.transform='translateX(0)'; this.style.background='rgba(255,255,255,0.1)';" onclick="showSection('home')">
+                        <i class="fas fa-home"></i> 🏠 الرئيسية
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <a href="#challenges" style="display: block; padding: 15px 20px; background: rgba(255,255,255,0.1); border-radius: 15px; color: white; text-decoration: none; transition: var(--transition);" 
+                       onmouseover="this.style.transform='translateX(-10px)'; this.style.background='rgba(78,205,196,0.3)';" 
+                       onmouseout="this.style.transform='translateX(0)'; this.style.background='rgba(255,255,255,0.1)';" onclick="showSection('challenges')">
+                        <i class="fas fa-trophy"></i> 🏆 التحديات
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <a href="#support" style="display: block; padding: 15px 20px; background: rgba(255,255,255,0.1); border-radius: 15px; color: white; text-decoration: none; transition: var(--transition);" 
+                       onmouseover="this.style.transform='translateX(-10px)'; this.style.background='rgba(255,209,102,0.3)';" 
+                       onmouseout="this.style.transform='translateX(0)'; this.style.background='rgba(255,255,255,0.1)';" onclick="showSection('support')">
+                        <i class="fas fa-headset"></i> 📞 الدعم
+                    </a>
+                </li>
             </ul>
         </nav>
         
-        <div class="support-sidebar">
-            <h3><i class="fas fa-flag"></i> الدعم الفني</h3>
-            <div class="support-number">+966 59 571 0239</div>
-            <p class="support-info">متاح من 8 صباحاً حتى 8 مساءً</p>
+        <div class="support-info" style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px; text-align: center; border: 2px solid var(--accent); animation: pulse 2s infinite;">
+            <h3 style="color: var(--accent); margin-bottom: 15px;">📞 الدعم الفني</h3>
+            <div style="font-size: 1.4rem; font-weight: 800; background: rgba(255,255,255,0.2); padding: 10px 15px; border-radius: 10px; direction: ltr; margin: 10px 0;">
+                +966 59 571 0239
+            </div>
+            <p style="opacity: 0.9; font-size: 0.9rem;">🕘 متاح من 8 صباحاً حتى 8 مساءً</p>
         </div>
     </aside>
 
     <!-- المحتوى الرئيسي -->
     <main class="main-content">
-        <!-- قسم الهيرو -->
-        <section id="home" class="hero">
-            <h1>اختبار معلومات كرة القدم</h1>
-            <p>اختبر معلوماتك في عالم الساحرة المستديرة مع تحديات تفاعلية وأسئلة شيقة عن تاريخ اللعبة وأبطالها</p>
-            
-            <!-- خانة الاسم -->
-            <div class="name-input">
-                <i class="fas fa-user"></i>
-                <input type="text" id="student-name" placeholder="⚽ اكتب اسمك هنا (مطلوب)">
+        <!-- القسم الرئيسي -->
+        <section id="home" class="section">
+            <div class="hero">
+                <h1 class="text-gradient">⚽ اختبار كرة القدم التفاعلي ✨</h1>
+                <p>🎯 اختبر معلوماتك في عالم الساحرة المستديرة مع تحديات تفاعلية مليئة بالمرح والمتعة! 🏆</p>
             </div>
 
-            <div class="cta-buttons">
-                <a href="#challenges" class="cta-button">
-                    <i class="fas fa-play"></i> ابدأ التحديات
-                </a>
+            <!-- قسم الاسم -->
+            <div class="name-section">
+                <h2 style="font-size: 2rem; margin-bottom: 25px; color: var(--accent);">
+                    <i class="fas fa-user-circle"></i> 🏷️ اكتب اسمك
+                </h2>
+                <div class="name-input-container">
+                    <i class="fas fa-user name-icon"></i>
+                    <input type="text" class="name-input" id="studentName" placeholder="✍️ اكتب اسمك هنا يا بطل...">
+                </div>
+                <p style="margin-top: 20px; font-size: 1.1rem; opacity: 0.9;">
+                    <i class="fas fa-info-circle"></i> ⚠️ يجب كتابة الاسم قبل بدء أي تحدٍ
+                </p>
+            </div>
+
+            <!-- قسم المميزات -->
+            <h2 class="section-title">
+                <i class="fas fa-star"></i> ✨ مميزات الموقع
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>اختبارات ذكاء</h3>
+                    <p>🧩 اختبر معلوماتك في كرة القدم بأسئلة مصممة بعناية</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>تاريخ اللعبة</h3>
+                    <p>⏳ تعرف على تاريخ كرة القدم وأبرز المحطات</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>إحصائيات مفصلة</h3>
+                    <p>📈 احصل على إحصائيات مفصلة عن أدائك</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏅</div>
+                    <h3>تحديات وجوائز</h3>
+                    <p>🎖️ شارك في تحديات متنوعة واحصل على شهادات</p>
+                </div>
             </div>
         </section>
 
         <!-- قسم التحديات -->
         <section id="challenges" class="section">
-            <h2 class="section-title"><i class="fas fa-trophy"></i> التحديات المتاحة</h2>
+            <h2 class="section-title">
+                <i class="fas fa-trophy"></i> 🏆 التحديات المتاحة
+            </h2>
+            
             <div class="challenge-cards">
+                <!-- تحدية كأس العالم -->
                 <div class="challenge-card">
-                    <div class="challenge-card-header">
-                        <h3>تحدي كأس العالم</h3>
-                        <div class="difficulty medium">متوسط الصعوبة</div>
+                    <div class="challenge-header">
+                        <h3>🌍 كأس العالم</h3>
+                        <div class="difficulty medium">⚡ متوسط</div>
                     </div>
-                    <div class="challenge-card-body">
-                        <p>اختبر معلوماتك في بطولة كأس العالم (15 سؤالاً):</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> <span>أبطال البطولات السابقة</span></li>
-                            <li><i class="fas fa-check"></i> <span>الهدافون التاريخيون</span></li>
-                            <li><i class="fas fa-check"></i> <span>المنتخبات الأكثر تتويجاً</span></li>
-                            <li><i class="fas fa-check"></i> <span>أبرز المباريات واللحظات</span></li>
+                    <div class="challenge-body">
+                        <p>🎯 اختبر معلوماتك في بطولة كأس العالم:</p>
+                        <ul class="challenge-features">
+                            <li><i class="fas fa-check"></i> <span>15 سؤالاً تحديًا ⚽</span></li>
+                            <li><i class="fas fa-check"></i> <span>أبطال البطولات 🏆</span></li>
+                            <li><i class="fas fa-check"></i> <span>الهدافون التاريخيون 👑</span></li>
+                            <li><i class="fas fa-check"></i> <span>لحظات تاريخية ⭐</span></li>
                         </ul>
-                        <button class="test-button" onclick="startQuiz('worldCup')">
-                            <i class="fas fa-globe-americas"></i> ابدأ التحدي
+                        <button class="start-btn" onclick="startQuiz('worldCup')">
+                            <i class="fas fa-play"></i> 🚀 ابدأ التحدي
                         </button>
                     </div>
                 </div>
                 
+                <!-- تحدية دوري الأبطال -->
                 <div class="challenge-card">
-                    <div class="challenge-card-header">
-                        <h3>تحدي دوري الأبطال</h3>
-                        <div class="difficulty hard">صعب</div>
+                    <div class="challenge-header">
+                        <h3>🛡️ دوري الأبطال</h3>
+                        <div class="difficulty hard">🔥 صعب</div>
                     </div>
-                    <div class="challenge-card-body">
-                        <p>اختبر معلوماتك في دوري أبطال أوروبا (15 سؤالاً):</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> <span>أكثر الأندية فوزاً</span></li>
-                            <li><i class="fas fa-check"></i> <span>الهدافون التاريخيون</span></li>
-                            <li><i class="fas fa-check"></i> <span>أبرز المدربين</span></li>
-                            <li><i class="fas fa-check"></i> <span>اللاعبون الأسطوريون</span></li>
+                    <div class="challenge-body">
+                        <p>🎯 اختبر معلوماتك في دوري أبطال أوروبا:</p>
+                        <ul class="challenge-features">
+                            <li><i class="fas fa-check"></i> <span>15 سؤالاً تحديًا ⚽</span></li>
+                            <li><i class="fas fa-check"></i> <span>أكثر الأندية فوزاً 🏅</span></li>
+                            <li><i class="fas fa-check"></i> <span>الهدافون التاريخيون 👑</span></li>
+                            <li><i class="fas fa-check"></i> <span>اللاعبون الأسطوريون ⭐</span></li>
                         </ul>
-                        <button class="test-button" onclick="startQuiz('champions')">
-                            <i class="fas fa-shield-alt"></i> ابدأ التحدي
+                        <button class="start-btn" onclick="startQuiz('champions')">
+                            <i class="fas fa-play"></i> 🚀 ابدأ التحدي
                         </button>
                     </div>
                 </div>
                 
+                <!-- تحدية كرة القدم العربية -->
                 <div class="challenge-card">
-                    <div class="challenge-card-header">
-                        <h3>تحدي كرة القدم العربية</h3>
-                        <div class="difficulty easy">سهل</div>
+                    <div class="challenge-header">
+                        <h3>🌙 كرة القدم العربية</h3>
+                        <div class="difficulty easy">😊 سهل</div>
                     </div>
-                    <div class="challenge-card-body">
-                        <p>اختبر معلوماتك في كرة القدم العربية (15 سؤالاً):</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> <span>أبطال دوري الأبطال الآسيوي</span></li>
-                            <li><i class="fas fa-check"></i> <span>المنتخبات العربية</span></li>
-                            <li><i class="fas fa-check"></i> <span>أبرز اللاعبين العرب</span></li>
-                            <li><i class="fas fa-check"></i> <span>الإنجازات العربية العالمية</span></li>
+                    <div class="challenge-body">
+                        <p>🎯 اختبر معلوماتك في كرة القدم العربية:</p>
+                        <ul class="challenge-features">
+                            <li><i class="fas fa-check"></i> <span>15 سؤالاً تحديًا ⚽</span></li>
+                            <li><i class="fas fa-check"></i> <span>أبطال دوري الأبطال الآسيوي 🏆</span></li>
+                            <li><i class="fas fa-check"></i> <span>المنتخبات العربية 🇸🇦🇪🇬🇲🇦</span></li>
+                            <li><i class="fas fa-check"></i> <span>أبرز اللاعبين العرب ⭐</span></li>
                         </ul>
-                        <button class="test-button" onclick="startQuiz('arab')">
-                            <i class="fas fa-mosque"></i> ابدأ التحدي
+                        <button class="start-btn" onclick="startQuiz('arab')">
+                            <i class="fas fa-play"></i> 🚀 ابدأ التحدي
                         </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- قسم الاختبارات -->
+        <!-- قسم الاختبار -->
         <section id="quiz" class="quiz-section">
-            <div class="quiz-container" id="quiz-container">
+            <div class="quiz-container">
                 <div class="quiz-header">
-                    <h2 class="quiz-title" id="quiz-title">اختبار معلومات كرة القدم</h2>
-                    <p class="quiz-description" id="quiz-description">اختبر معلوماتك في عالم كرة القدم</p>
+                    <h2 class="quiz-title" id="quizTitle">🎯 اختبار كرة القدم</h2>
+                    <p class="quiz-description" id="quizDescription">⚽ اختبر معلوماتك في عالم كرة القدم</p>
                 </div>
+
                 <div class="quiz-progress">
-                    <div class="quiz-progress-bar" id="quiz-progress"></div>
-                    <div class="quiz-progress-text" id="quiz-progress-text">1/15</div>
+                    <div class="progress-bar" id="progressBar"></div>
+                    <div class="progress-text" id="progressText">1/15</div>
                 </div>
-                <div class="question" id="question"></div>
-                <div class="options" id="options"></div>
+
+                <div class="question-container">
+                    <div class="question" id="questionText">⚽ جاري تحميل السؤال...</div>
+                    <div class="options-grid" id="optionsContainer"></div>
+                </div>
+
                 <div class="quiz-navigation">
-                    <button class="nav-button" id="prev-button" onclick="prevQuestion()">
-                        <i class="fas fa-arrow-right"></i> السابق
+                    <button class="nav-btn" id="prevBtn" onclick="prevQuestion()">
+                        <i class="fas fa-arrow-right"></i> ⏮️ السابق
                     </button>
-                    <div class="quiz-timer" id="quiz-timer">
-                        <i class="fas fa-clock"></i> <span id="timer">15:00</span>
+                    
+                    <div class="timer" id="timer">
+                        <i class="fas fa-clock"></i> ⏰ <span id="timeDisplay">15:00</span>
                     </div>
-                    <button class="nav-button" id="next-button" onclick="nextQuestion()">
-                        التالي <i class="fas fa-arrow-left"></i>
+                    
+                    <button class="nav-btn" id="nextBtn" onclick="nextQuestion()">
+                        ⏭️ التالي <i class="fas fa-arrow-left"></i>
                     </button>
                 </div>
             </div>
+        </section>
 
-            <div id="results-container" class="results-container">
-                <h2 class="results-title">نتيجة الاختبار</h2>
-                <div class="results-score" id="results-score"></div>
-                <div class="results-message" id="results-message"></div>
-                <div class="results-details">
-                    <h3>تفاصيل الإجابات</h3>
-                    <ul id="results-list"></ul>
+        <!-- قسم النتائج -->
+        <section id="results" class="results-section">
+            <div class="results-container">
+                <h2 class="results-title">🎉 نتيجة الاختبار</h2>
+                <div class="score-display" id="finalScore">0/15</div>
+                <div class="results-message" id="resultMessage">
+                    👏 أحسنت يا <span class="player-name" id="playerName">بطل</span>! <br>
+                    🎯 أداؤك في الاختبار...
                 </div>
+                
+                <div class="results-details">
+                    <h3 style="text-align: right; color: var(--accent); margin-bottom: 25px;">
+                        📋 تفاصيل الإجابات
+                    </h3>
+                    <ul class="results-list" id="resultsList"></ul>
+                </div>
+                
                 <div class="results-actions">
-                    <button class="action-button" onclick="restartQuiz()">
-                        <i class="fas fa-redo"></i> إعادة الاختبار
+                    <button class="action-btn" onclick="restartQuiz()">
+                        <i class="fas fa-redo"></i> 🔄 إعادة الاختبار
                     </button>
-                    <button class="action-button secondary" onclick="backToChallenges()">
-                        <i class="fas fa-trophy"></i> العودة للتحديات
+                    <button class="action-btn secondary" onclick="showSection('challenges')">
+                        <i class="fas fa-trophy"></i> 🏆 تحديات جديدة
                     </button>
                 </div>
             </div>
@@ -1118,654 +1410,580 @@
 
         <!-- قسم الدعم -->
         <section id="support" class="section">
-            <h2 class="section-title"><i class="fas fa-headset"></i> الدعم الفني</h2>
-            <p>إذا كنت بحاجة إلى مساعدة أو لديك استفسار، لا تتردد في التواصل معنا:</p>
-            <div class="support-number">+966 59 571 0239</div>
-            <p class="support-info">رقم الدعم متاح من الساعة 8 صباحاً حتى 8 مساءً بتوقيت السعودية</p>
+            <h2 class="section-title">
+                <i class="fas fa-headset"></i> 📞 الدعم الفني
+            </h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">
+                🤔 إذا كنت بحاجة إلى مساعدة أو لديك استفسار، لا تتردد في التواصل معنا:
+            </p>
+            <div style="font-size: 1.8rem; font-weight: 800; background: var(--gradient-primary); padding: 20px 30px; border-radius: 15px; display: inline-block; margin: 20px 0; animation: pulse 2s infinite;">
+                📱 +966 59 571 0239
+            </div>
+            <p style="font-size: 1.1rem; opacity: 0.9; margin-top: 20px;">
+                🕘 رقم الدعم متاح من الساعة 8 صباحاً حتى 8 مساءً بتوقيت السعودية
+            </p>
         </section>
 
-        <!-- التذييل -->
-        <footer>
+        <!-- الفوتر -->
+        <footer class="footer">
             <div class="footer-content">
-                <div class="footer-logo"><i class="fas fa-futbol"></i> اختبار كرة القدم</div>
-                <div class="copyright">© 
-                    2025 موقع اختبار معلومات كرة القدم. جميع الحقوق محفوظة.</div>
+                <div class="footer-logo">
+                    <i class="fas fa-futbol"></i> ⚽ اختبار كرة القدم ✨
+                </div>
+                
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 20px;">
+                    © 2025 ⚽ موقع اختبار معلومات كرة القدم ✨ جميع الحقوق محفوظة 🏆
+                </p>
             </div>
         </footer>
     </main>
 
     <script>
-        // بيانات الأسئلة الكاملة لكل التحديات
-        const footballQuiz = {
+        // بيانات الأسئلة الكاملة
+        const quizzes = {
             worldCup: {
-                title: "تحدي كأس العالم",
-                description: "اختبر معلوماتك في بطولة كأس العالم - 15 سؤالاً",
+                title: "🌍 كأس العالم",
+                description: "⚽ اختبر معلوماتك في بطولة كأس العالم - 15 سؤالاً",
                 questions: [
-                    {
-                        id: 1,
-                        question: "من هو أول منتخب يفوز بكأس العالم؟",
-                        choices: ["الأوروغواي", "البرازيل", "إيطاليا", "الأرجنتين"],
-                        correct: 0
-                    },
-                    {
-                        id: 2,
-                        question: "أي لاعب سجل هدف الفوز في نهائي كأس العالم 2010؟",
-                        choices: ["أندريس إنييستا", "ديفيد فيا", "سيرخيو راموس", "تشافي هيرنانديز"],
-                        correct: 0
-                    },
-                    {
-                        id: 3,
-                        question: "كم مرة فازت ألمانيا بكأس العالم؟",
-                        choices: ["3 مرات", "4 مرات", "5 مرات", "مرتين"],
-                        correct: 1
-                    },
-                    {
-                        id: 4,
-                        question: "من هو هداف كأس العالم 2018 بروسيا؟",
-                        choices: ["كيلين مبابي", "لوكا مودريتش", "هاري كين", "كريستيانو رونالدو"],
-                        correct: 2
-                    },
-                    {
-                        id: 5,
-                        question: "أين أقيمت كأس العالم 2014؟",
-                        choices: ["البرازيل", "جنوب أفريقيا", "روسيا", "ألمانيا"],
-                        correct: 0
-                    },
-                    {
-                        id: 6,
-                        question: "من هو الهداف التاريخي لكأس العالم؟",
-                        choices: ["بيليه", "ميروسلاف كلوزه", "رونالدو البرازيلي", "جيرد مولر"],
-                        correct: 1
-                    },
-                    {
-                        id: 7,
-                        question: "ما هي الدولة المستضيفة لكأس العالم 2022؟",
-                        choices: ["قطر", "السعودية", "الإمارات", "الكويت"],
-                        correct: 0
-                    },
-                    {
-                        id: 8,
-                        question: "من هو أصغر لاعب يسجل في كأس العالم؟",
-                        choices: ["بيليه", "مايكل أوين", "كيلين مبابي", "لينيل ميسي"],
-                        correct: 0
-                    },
-                    {
-                        id: 9,
-                        question: "كم عدد الأهداف التي سجلت في نهائي كأس العالم 2014؟",
-                        choices: ["1 هدف", "3 أهداف", "5 أهداف", "7 أهداف"],
-                        correct: 2
-                    },
-                    {
-                        id: 10,
-                        question: "من هو حارس المرمى الفائز بكأس العالم 2010؟",
-                        choices: ["إيكر كاسياس", "مانويل نوير", "جانلويجي بوفون", "تيم هاوارد"],
-                        correct: 0
-                    },
-                    {
-                        id: 11,
-                        question: "أي منتخب فاز بكأس العالم 1998؟",
-                        choices: ["البرازيل", "فرنسا", "إيطاليا", "الأرجنتين"],
-                        correct: 1
-                    },
-                    {
-                        id: 12,
-                        question: "من هو المدرب الفائز بكأس العالم 2014 مع ألمانيا؟",
-                        choices: ["يواكيم لوف", "يورغن كلينسمان", "لويس فان غال", "كارلو أنشيلوتي"],
-                        correct: 0
-                    },
-                    {
-                        id: 13,
-                        question: "كم مرة فازت البرازيل بكأس العالم؟",
-                        choices: ["4 مرات", "5 مرات", "6 مرات", "7 مرات"],
-                        correct: 1
-                    },
-                    {
-                        id: 14,
-                        question: "من هو اللاعب الذي سجل هدف القرن في كأس العالم 1986؟",
-                        choices: ["دييجو مارادونا", "بيليه", "زين الدين زيدان", "يوهان كرويف"],
-                        correct: 0
-                    },
-                    {
-                        id: 15,
-                        question: "ما هو عدد المنتخبات المشاركة في كأس العالم 2026؟",
-                        choices: ["32", "40", "48", "64"],
-                        correct: 2
-                    }
+                    { question: "🏆 من هو أول منتخب يفوز بكأس العالم؟", options: ["🇺🇾 الأوروغواي", "🇧🇷 البرازيل", "🇮🇹 إيطاليا", "🇦🇷 الأرجنتين"], answer: 0 },
+                    { question: "⚽ أي لاعب سجل هدف الفوز في نهائي 2010؟", options: ["🇪🇸 أندريس إنييستا", "🇪🇸 ديفيد فيا", "🇪🇸 سيرخيو راموس", "🇪🇸 تشافي هيرنانديز"], answer: 0 },
+                    { question: "🇩🇪 كم مرة فازت ألمانيا بكأس العالم؟", options: ["3 مرات 🥉", "4 مرات 🏆", "5 مرات 🥇", "مرتين 🥈"], answer: 1 },
+                    { question: "👑 من هو هداف كأس العالم 2018؟", options: ["🇫🇷 كيلين مبابي", "🇭🇷 لوكا مودريتش", "🏴󠁧󠁢󠁥󠁮󠁧󠁿 هاري كين", "🇵🇹 كريستيانو رونالدو"], answer: 2 },
+                    { question: "🌎 أين أقيمت كأس العالم 2014؟", options: ["🇧🇷 البرازيل", "🇿🇦 جنوب أفريقيا", "🇷🇺 روسيا", "🇩🇪 ألمانيا"], answer: 0 },
+                    { question: "⚽ من هو الهداف التاريخي لكأس العالم؟", options: ["🇧🇷 بيليه", "🇩🇪 ميروسلاف كلوزه", "🇧🇷 رونالدو", "🇩🇪 جيرد مولر"], answer: 1 },
+                    { question: "🏆 ما هي الدولة المستضيفة لكأس العالم 2022؟", options: ["🇶🇦 قطر", "🇸🇦 السعودية", "🇦🇪 الإمارات", "🇰🇼 الكويت"], answer: 0 },
+                    { question: "👶 من هو أصغر لاعب يسجل في كأس العالم؟", options: ["🇧🇷 بيليه ⭐", "🏴󠁧󠁢󠁥󠁮󠁧󠁿 مايكل أوين", "🇫🇷 كيلين مبابي", "🇦🇷 ليونيل ميسي"], answer: 0 },
+                    { question: "🎯 كم عدد الأهداف في نهائي 2014؟", options: ["1 هدف 🥅", "3 أهداف ⚽⚽⚽", "5 أهداف ⭐⭐⭐⭐⭐", "7 أهداف 🏆"], answer: 2 },
+                    { question: "🧤 من هو حارس المرمى الفائز بكأس العالم 2010؟", options: ["🇪🇸 إيكر كاسياس", "🇩🇪 مانويل نوير", "🇮🇹 جانلويجي بوفون", "🇺🇸 تيم هاوارد"], answer: 0 },
+                    { question: "🏆 أي منتخب فاز بكأس العالم 1998؟", options: ["🇧🇷 البرازيل", "🇫🇷 فرنسا", "🇮🇹 إيطاليا", "🇦🇷 الأرجنتين"], answer: 1 },
+                    { question: "👔 من هو المدرب الفائز بكأس العالم 2014؟", options: ["🇩🇪 يواكيم لوف", "🇩🇪 يورغن كلينسمان", "🇳🇱 لويس فان غال", "🇮🇹 كارلو أنشيلوتي"], answer: 0 },
+                    { question: "🇧🇷 كم مرة فازت البرازيل بكأس العالم؟", options: ["4 مرات 🥉", "5 مرات ⭐", "6 مرات 🏆", "7 مرات 👑"], answer: 1 },
+                    { question: "⚽ من هو اللاعب الذي سجل هدف القرن في 1986؟", options: ["🇦🇷 دييجو مارادونا", "🇧🇷 بيليه", "🇫🇷 زين الدين زيدان", "🇳🇱 يوهان كرويف"], answer: 0 },
+                    { question: "🌍 ما هو عدد المنتخبات في كأس العالم 2026؟", options: ["32 منتخب", "40 منتخب", "48 منتخب ⭐", "64 منتخب"], answer: 2 }
                 ]
             },
             
             champions: {
-                title: "تحدي دوري الأبطال",
-                description: "اختبر معلوماتك في دوري أبطال أوروبا - 15 سؤالاً",
+                title: "🛡️ دوري الأبطال",
+                description: "⚽ اختبر معلوماتك في دوري أبطال أوروبا - 15 سؤالاً",
                 questions: [
-                    {
-                        id: 1,
-                        question: "أي نادٍ فاز بدوري الأبطال 14 مرة؟",
-                        choices: ["برشلونة", "بايرن ميونخ", "ريال مدريد", "ليفربول"],
-                        correct: 2
-                    },
-                    {
-                        id: 2,
-                        question: "من هو الهداف التاريخي لدوري الأبطال؟",
-                        choices: ["ليونيل ميسي", "كريستيانو رونالدو", "روبرت ليفاندوفسكي", "كاريم بنزيما"],
-                        correct: 1
-                    },
-                    {
-                        id: 3,
-                        question: "في أي عام تحول كأس أوروبا إلى دوري الأبطال؟",
-                        choices: ["1990", "1992", "1995", "2000"],
-                        correct: 1
-                    },
-                    {
-                        id: 4,
-                        question: "أي نادٍ فاز بالثلاثية الأوروبية (دوري الأبطال، الدوري المحلي، الكأس) في 1999؟",
-                        choices: ["مانشستر يونايتد", "برشلونة", "بايرن ميونخ", "يوفنتوس"],
-                        correct: 0
-                    },
-                    {
-                        id: 5,
-                        question: "من هو المدرب الذي فاز باللقب 3 مرات متتالية مع ريال مدريد؟",
-                        choices: ["زين الدين زيدان", "بيب غوارديولا", "كارلو أنشيلوتي", "جوزيه مورينيو"],
-                        correct: 0
-                    },
-                    {
-                        id: 6,
-                        question: "أي نادٍ فاز باللقب في 2005 بعد العودة من 3-0؟",
-                        choices: ["ميلان", "ليفربول", "تشيلسي", "أرسنال"],
-                        correct: 1
-                    },
-                    {
-                        id: 7,
-                        question: "من هو أصغر لاعب يسجل في نهائي دوري الأبطال؟",
-                        choices: ["كيلين مبابي", "ماركو فان باستن", "باتريك كلايفرت", "بيدري"],
-                        correct: 2
-                    },
-                    {
-                        id: 8,
-                        question: "كم عدد الأندية الإيطالية التي فازت باللقب؟",
-                        choices: ["2", "3", "4", "5"],
-                        correct: 1
-                    },
-                    {
-                        id: 9,
-                        question: "من هو اللاعب الذي سجل 5 أهداف في مباراة واحدة بالبطولة؟",
-                        choices: ["ليونيل ميسي", "لويز أدريانو", "روبرت ليفاندوفسكي", "إيرلينغ هالاند"],
-                        correct: 1
-                    },
-                    {
-                        id: 10,
-                        question: "أي نادٍ فاز باللقب في 2020 أثناء جائحة كورونا؟",
-                        choices: ["بايرن ميونخ", "باريس سان جيرمان", "مانشستر سيتي", "ريال مدريد"],
-                        correct: 0
-                    },
-                    {
-                        id: 11,
-                        question: "من هو حارس المرمى الأكثر نظافة شباك في تاريخ البطولة؟",
-                        choices: ["إيكر كاسياس", "جانلويجي بوفون", "مانويل نوير", "بيتر تشيك"],
-                        correct: 0
-                    },
-                    {
-                        id: 12,
-                        question: "كم مرة فاز برشلونة بدوري الأبطال؟",
-                        choices: ["3 مرات", "4 مرات", "5 مرات", "6 مرات"],
-                        correct: 2
-                    },
-                    {
-                        id: 13,
-                        question: "من هو المدرب الأكثر فوزاً باللقب؟",
-                        choices: ["بيب غوارديولا", "كارلو أنشيلوتي", "أليكس فيرغسون", "بوب بيزلي"],
-                        correct: 1
-                    },
-                    {
-                        id: 14,
-                        question: "أي نادٍ وصل للنهائي 8 مرات ولم يفز أبداً؟",
-                        choices: ["أرسنال", "أتليتكو مدريد", "يوفنتوس", "فالنسيا"],
-                        correct: 1
-                    },
-                    {
-                        id: 15,
-                        question: "من هو أول لاعب يسجل في 15 موسم متتالي بالبطولة؟",
-                        choices: ["كريستيانو رونالدو", "ليونيل ميسي", "راؤول غونزاليس", "كاريم بنزيما"],
-                        correct: 0
-                    }
+                    { question: "🏆 أي نادٍ فاز بدوري الأبطال 14 مرة؟", options: ["🔵🔴 برشلونة", "🔴 بايرن ميونخ", "⚪ ريال مدريد 👑", "🔴 ليفربول"], answer: 2 },
+                    { question: "👑 من هو الهداف التاريخي لدوري الأبطال؟", options: ["🇦🇷 ليونيل ميسي", "🇵🇹 كريستيانو رونالدو ⭐", "🇵🇱 روبرت ليفاندوفسكي", "🇫🇷 كاريم بنزيما"], answer: 1 },
+                    { question: "📅 في أي عام تحول كأس أوروبا إلى دوري الأبطال؟", options: ["1990", "1992 🏆", "1995", "2000"], answer: 1 },
+                    { question: "👑 أي نادٍ فاز بالثلاثية الأوروبية في 1999؟", options: ["🏴󠁧󠁢󠁥󠁮󠁧󠁿 مانشستر يونايتد ⭐", "🔵🔴 برشلونة", "🔴 بايرن ميونخ", "⚫⚪ يوفنتوس"], answer: 0 },
+                    { question: "👔 من هو المدرب الذي فاز باللقب 3 مرات متتالية؟", options: ["🇫🇷 زين الدين زيدان 🏆", "🇪🇸 بيب غوارديولا", "🇮🇹 كارلو أنشيلوتي", "🇵🇹 جوزيه مورينيو"], answer: 0 },
+                    { question: "🔴 أي نادٍ فاز باللقب في 2005 بعد العودة من 3-0؟", options: ["⚫🔴 ميلان", "🔴 ليفربول ⭐", "🔵 تشيلسي", "🔴 أرسنال"], answer: 1 },
+                    { question: "👶 من هو أصغر لاعب يسجل في نهائي دوري الأبطال؟", options: ["🇫🇷 كيلين مبابي", "🇳🇱 ماركو فان باستن", "🇳🇱 باتريك كلايفرت ⭐", "🇪🇸 بيدري"], answer: 2 },
+                    { question: "🇮🇹 كم عدد الأندية الإيطالية التي فازت باللقب؟", options: ["2", "3 ⭐", "4", "5"], answer: 1 },
+                    { question: "⚽ من هو اللاعب الذي سجل 5 أهداف في مباراة واحدة؟", options: ["🇦🇷 ليونيل ميسي", "🇧🇷 لويز أدريانو ⭐", "🇵🇱 روبرت ليفاندوفسكي", "🇳🇴 إيرلينغ هالاند"], answer: 1 },
+                    { question: "🏆 أي نادٍ فاز باللقب في 2020 أثناء جائحة كورونا؟", options: ["🔴 بايرن ميونخ ⭐", "🔵🔴 باريس سان جيرمان", "🔵 مانشستر سيتي", "⚪ ريال مدريد"], answer: 0 },
+                    { question: "🧤 من هو حارس المرمى الأكثر نظافة شباك؟", options: ["🇪🇸 إيكر كاسياس ⭐", "🇮🇹 جانلويجي بوفون", "🇩🇪 مانويل نوير", "🇨🇿 بيتر تشيك"], answer: 0 },
+                    { question: "🔵🔴 كم مرة فاز برشلونة بدوري الأبطال؟", options: ["3 مرات 🥉", "4 مرات", "5 مرات ⭐", "6 مرات"], answer: 2 },
+                    { question: "👔 من هو المدرب الأكثر فوزاً باللقب؟", options: ["🇪🇸 بيب غوارديولا", "🇮🇹 كارلو أنشيلوتي ⭐", "🏴󠁧󠁢󠁳󠁣󠁴󠁿 أليكس فيرغسون", "🏴󠁧󠁢󠁥󠁮󠁧󠁿 بوب بيزلي"], answer: 1 },
+                    { question: "🔴⚪ أي نادٍ وصل للنهائي 8 مرات ولم يفز؟", options: ["🔴 أرسنال", "🔴⚪ أتليتكو مدريد ⭐", "⚫⚪ يوفنتوس", "🟠 فالنسيا"], answer: 1 },
+                    { question: "⭐ من هو أول لاعب يسجل في 15 موسم متتالي؟", options: ["🇵🇹 كريستيانو رونالدو 👑", "🇦🇷 ليونيل ميسي", "🇪🇸 راؤول غونزاليس", "🇫🇷 كاريم بنزيما"], answer: 0 }
                 ]
             },
             
             arab: {
-                title: "تحدي كرة القدم العربية",
-                description: "اختبر معلوماتك في كرة القدم العربية - 15 سؤالاً",
+                title: "🌙 كرة القدم العربية",
+                description: "⚽ اختبر معلوماتك في كرة القدم العربية - 15 سؤالاً",
                 questions: [
-                    {
-                        id: 1,
-                        question: "من هو اللاعب العربي الوحيد الفائز بجائزة الكرة الذهبية؟",
-                        choices: ["محمد صلاح", "رياض محرز", "جورج ويا", "مهدي بن عطية"],
-                        correct: 2
-                    },
-                    {
-                        id: 2,
-                        question: "أي منتخب عربي وصل لنصف نهائي كأس العالم؟",
-                        choices: ["المغرب", "مصر", "السعودية", "الجزائر"],
-                        correct: 0
-                    },
-                    {
-                        id: 3,
-                        question: "من هو الهداف التاريخي للمنتخب المصري؟",
-                        choices: ["محمد صلاح", "محمد أبو تريكة", "حسام حسن", "عمرو زكي"],
-                        correct: 2
-                    },
-                    {
-                        id: 4,
-                        question: "أي نادٍ عربي فاز بدوري أبطال آسيا؟",
-                        choices: ["الهلال السعودي", "الأهلي المصري", "الجزيرة الإماراتي", "كل ما سبق"],
-                        correct: 3
-                    },
-                    {
-                        id: 5,
-                        question: "من هو أول لاعب عربي يلعب في الدوري الإسباني؟",
-                        choices: ["مجد شرف", "نور الدين النيبت", "رياض محرز", "محمد صلاح"],
-                        correct: 1
-                    },
-                    {
-                        id: 6,
-                        question: "كم مرة فاز المنتخب المصري بكأس الأمم الأفريقية؟",
-                        choices: ["5 مرات", "7 مرات", "8 مرات", "9 مرات"],
-                        correct: 1
-                    },
-                    {
-                        id: 7,
-                        question: "من هو أول لاعب سعودي يلعب في الدوري الإنجليزي؟",
-                        choices: ["سامي الجابر", "يوسف الثنيان", "فيصل الدوسري", "محمد الدعيع"],
-                        correct: 0
-                    },
-                    {
-                        id: 8,
-                        question: "أي لاعب عربي سجل في 3 كؤوس عالم مختلفة؟",
-                        choices: ["محمد صلاح", "رياض محرز", "صامويل إيتو", "محمد أبو تريكة"],
-                        correct: 0
-                    },
-                    {
-                        id: 9,
-                        question: "من هو المدرب العربي الذي قاد منتخباً أوروبياً؟",
-                        choices: ["رابح ماجر", "حسام البدر", "جمال بلماضي", "علي مبخوت"],
-                        correct: 0
-                    },
-                    {
-                        id: 10,
-                        question: "أي منتخب عربي فاز بكأس آسيا 3 مرات؟",
-                        choices: ["السعودية", "اليابان", "إيران", "قطر"],
-                        correct: 0
-                    },
-                    {
-                        id: 11,
-                        question: "من هو أصغر لاعب عربي يسجل في كأس العالم؟",
-                        choices: ["سالم الدوسري", "محمد صلاح", "رياض محرز", "عبدالفتاح عسيري"],
-                        correct: 0
-                    },
-                    {
-                        id: 12,
-                        question: "أي نادٍ مصري فاز بدوري أبطال أفريقيا 10 مرات؟",
-                        choices: ["الزمالك", "الأهلي", "الإسماعيلي", "المقاولون"],
-                        correct: 1
-                    },
-                    {
-                        id: 13,
-                        question: "من هو اللاعب العربي الأكثر تتويجاً بالألقاب الأوروبية؟",
-                        choices: ["محمد صلاح", "رياض محرز", "عبد الرحمن العباس", "ياسر القحطاني"],
-                        correct: 1
-                    },
-                    {
-                        id: 14,
-                        question: "أي لاعب مغربي لعب مع برشلونة؟",
-                        choices: ["رشيد عزاوي", "نور الدين أمرابط", "يوسف النصيري", "سفيان بوفال"],
-                        correct: 1
-                    },
-                    {
-                        id: 15,
-                        question: "من هو حارس المرمى العربي الذي لعب في الدوري الإنجليزي؟",
-                        choices: ["عصام الحضري", "خالد الرشيدي", "منير الذيابي", "عبد الكريم الدمامي"],
-                        correct: 0
-                    }
+                    { question: "👑 من هو اللاعب العربي الفائز بجائزة الكرة الذهبية؟", options: ["🇪🇬 محمد صلاح", "🇩🇿 رياض محرز", "🇱🇷 جورج ويا ⭐", "🇹🇳 مهدي بن عطية"], answer: 2 },
+                    { question: "🌍 أي منتخب عربي وصل لنصف نهائي كأس العالم؟", options: ["🇲🇦 المغرب ⭐", "🇪🇬 مصر", "🇸🇦 السعودية", "🇩🇿 الجزائر"], answer: 0 },
+                    { question: "🇪🇬 من هو الهداف التاريخي للمنتخب المصري؟", options: ["🌟 محمد صلاح", "🌟 محمد أبو تريكة", "🌟 حسام حسن ⭐", "🌟 عمرو زكي"], answer: 2 },
+                    { question: "🏆 أي نادٍ عربي فاز بدوري أبطال آسيا؟", options: ["🇸🇦 الهلال السعودي", "🇪🇬 الأهلي المصري", "🇦🇪 الجزيرة الإماراتي", "✅ كل ما سبق ⭐"], answer: 3 },
+                    { question: "🇪🇸 من هو أول لاعب عربي يلعب في الدوري الإسباني؟", options: ["🇵🇸 مجد شرف", "🇲🇦 نور الدين النيبت ⭐", "🇩🇿 رياض محرز", "🇪🇬 محمد صلاح"], answer: 1 },
+                    { question: "🏆 كم مرة فاز المنتخب المصري بكأس الأمم الأفريقية؟", options: ["5 مرات", "7 مرات ⭐", "8 مرات", "9 مرات"], answer: 1 },
+                    { question: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 من هو أول لاعب سعودي يلعب في الدوري الإنجليزي؟", options: ["🇸🇦 سامي الجابر ⭐", "🇸🇦 يوسف الثنيان", "🇸🇦 فيصل الدوسري", "🇸🇦 محمد الدعيع"], answer: 0 },
+                    { question: "⚽ أي لاعب عربي سجل في 3 كؤوس عالم مختلفة؟", options: ["🇪🇬 محمد صلاح ⭐", "🇩🇿 رياض محرز", "🇨🇲 صامويل إيتو", "🇪🇬 محمد أبو تريكة"], answer: 0 },
+                    { question: "👔 من هو المدرب العربي الذي قاد منتخباً أوروبياً؟", options: ["🇩🇿 رابح ماجر ⭐", "🇸🇦 حسام البدر", "🇩🇿 جمال بلماضي", "🇦🇪 علي مبخوت"], answer: 0 },
+                    { question: "🏆 أي منتخب عربي فاز بكأس آسيا 3 مرات؟", options: ["🇸🇦 السعودية ⭐", "🇯🇵 اليابان", "🇮🇷 إيران", "🇶🇦 قطر"], answer: 0 },
+                    { question: "👶 من هو أصغر لاعب عربي يسجل في كأس العالم؟", options: ["🇸🇦 سالم الدوسري ⭐", "🇪🇬 محمد صلاح", "🇩🇿 رياض محرز", "🇸🇦 عبدالفتاح عسيري"], answer: 0 },
+                    { question: "🇪🇬 أي نادٍ مصري فاز بدوري أبطال أفريقيا 10 مرات؟", options: ["⚪ الزمالك", "🔴 الأهلي ⭐", "🟡 الإسماعيلي", "🔵 المقاولون"], answer: 1 },
+                    { question: "🏆 من هو اللاعب العربي الأكثر تتويجاً بالألقاب الأوروبية؟", options: ["🇪🇬 محمد صلاح", "🇩🇿 رياض محرز ⭐", "🇸🇦 عبد الرحمن العباس", "🇸🇦 ياسر القحطاني"], answer: 1 },
+                    { question: "🔵🔴 أي لاعب مغربي لعب مع برشلونة؟", options: ["🇲🇦 رشيد عزاوي", "🇲🇦 نور الدين أمرابط ⭐", "🇲🇦 يوسف النصيري", "🇲🇦 سفيان بوفال"], answer: 1 },
+                    { question: "🧤 من هو حارس المرمى العربي الذي لعب في الدوري الإنجليزي؟", options: ["🇪🇬 عصام الحضري ⭐", "🇸🇦 خالد الرشيدي", "🇸🇦 منير الذيابي", "🇸🇦 عبد الكريم الدمامي"], answer: 0 }
                 ]
             }
         };
 
-        // المتغيرات العامة
-        let currentQuiz = footballQuiz.worldCup;
-        let currentQuestion = 0;
-        let userAnswers = {};
-        let quizScore = 0;
-        let timerInterval;
-        let timeLeft = 900; // 15 دقيقة
-        let studentName = "";
+        // متغيرات التطبيق
+        let currentQuiz = null;
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let score = 0;
+        let timer = null;
+        let timeLeft = 900;
+        let playerName = "";
 
-        // وظائف القائمة للجوال
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('active');
-        });
-
-        // إخفاء القائمة عند النقر على رابط
-        document.querySelectorAll('.sidebar-nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    document.getElementById('sidebar').classList.remove('active');
+        // 🌟 الأنيميشنات عند التحميل
+        window.addEventListener('load', function() {
+            // أنيميشن دخول العناصر
+            document.querySelectorAll('.feature-card, .challenge-card').forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+                card.classList.add('animate__animated', 'animate__fadeInUp');
+            });
+            
+            // أنيميشن النصوص
+            document.querySelectorAll('h1, h2, h3').forEach((heading, index) => {
+                heading.style.animationDelay = `${index * 0.1}s`;
+                heading.classList.add('animate__animated', 'animate__fadeIn');
+            });
+            
+            // تهيئة الاسم
+            const nameInput = document.getElementById('studentName');
+            nameInput.addEventListener('input', function() {
+                if (this.value.trim().length >= 2) {
+                    this.style.borderColor = "#06D6A0";
+                    this.style.boxShadow = "0 0 30px rgba(6, 214, 160, 0.5)";
+                } else {
+                    this.style.borderColor = "#FFD166";
+                    this.style.boxShadow = "0 10px 30px rgba(255, 209, 102, 0.3)";
                 }
             });
         });
 
-        // بدء الاختبار مع التحقق من الاسم
-        function startQuiz(quizType) {
-            const input = document.getElementById("student-name");
-            studentName = input ? input.value.trim() : "";
+        // 🎯 عرض القسم المحدد
+        function showSection(sectionId) {
+            // إغلاق القائمة الجانبية على الهاتف
+            if (window.innerWidth <= 768) {
+                document.getElementById('sidebar').classList.remove('active');
+            }
             
-            // تحقق قوي من كتابة الاسم
-            if (!studentName || studentName.length < 2) {
-                alert("⚠️ من فضلك اكتب اسمك الحقيقي أولاً (اسم مكون من حرفين على الأقل)!");
-                if (input) {
-                    input.focus();
-                    input.style.borderColor = "var(--danger)";
-                    input.style.boxShadow = "0 0 0 3px rgba(239, 68, 68, 0.3)";
-                    
-                    // إعادة اللون الطبيعي بعد ثانية
-                    setTimeout(() => {
-                        input.style.borderColor = "var(--accent)";
-                        input.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.2)";
-                    }, 1000);
-                }
+            // إخفاء جميع الأقسام
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('challenges').style.display = 'none';
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('support').style.display = 'none';
+            
+            // عرض القسم المطلوب
+            document.getElementById(sectionId).style.display = 'block';
+            
+            // أنيميشن الدخول
+            document.getElementById(sectionId).style.animation = 'fadeIn 0.8s ease';
+        }
+
+        // 🚀 بدء الاختبار
+        function startQuiz(quizType) {
+            const nameInput = document.getElementById('studentName');
+            playerName = nameInput.value.trim();
+            
+            // ✨ تحقق من الاسم مع أنيميشن
+            if (!playerName || playerName.length < 2) {
+                nameInput.style.animation = 'shake 0.5s ease';
+                nameInput.style.borderColor = '#EF476F';
+                nameInput.style.boxShadow = '0 0 30px rgba(239, 71, 111, 0.5)';
+                
+                setTimeout(() => {
+                    nameInput.style.animation = '';
+                    nameInput.style.borderColor = '#FFD166';
+                    nameInput.style.boxShadow = '0 10px 30px rgba(255, 209, 102, 0.3)';
+                }, 500);
+                
+                // 💬 رسالة تفاعلية
+                const messages = ["⚡ اكتب اسمك يا بطل!", "🎯 الاسم ضروري لبدء التحدي!", "⭐ لا تنسى كتابة اسمك!"];
+                const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+                alert(`⚠️ ${randomMsg}`);
+                
+                nameInput.focus();
                 return;
             }
             
-            // تعيين نوع الاختبار والبدء
-            currentQuiz = footballQuiz[quizType];
-            initializeQuiz();
-        }
-
-        // تهيئة الاختبار
-        function initializeQuiz() {
-            currentQuestion = 0;
-            userAnswers = {};
-            quizScore = 0;
-            timeLeft = 900; // 15 دقيقة
+            // 🌟 تهيئة الاختبار
+            currentQuiz = quizzes[quizType];
+            currentQuestionIndex = 0;
+            userAnswers = new Array(currentQuiz.questions.length).fill(null);
+            score = 0;
+            timeLeft = 900;
             
-            document.getElementById('quiz-title').textContent = currentQuiz.title;
-            document.getElementById('quiz-description').textContent = currentQuiz.description;
+            // 🎨 تحديث الواجهة
+            document.getElementById('quizTitle').textContent = currentQuiz.title;
+            document.getElementById('quizDescription').textContent = currentQuiz.description;
+            document.getElementById('playerName').textContent = playerName;
             
-            // إخفاء الأقسام وإظهار الاختبار
-            document.getElementById('challenges').style.display = 'none';
-            document.getElementById('quiz').style.display = 'block';
-            document.getElementById('quiz-container').style.display = 'block';
-            document.getElementById('results-container').style.display = 'none';
+            // 🎬 عرض قسم الاختبار مع أنيميشن
+            showSection('quiz');
+            document.getElementById('quiz').style.animation = 'slideIn 0.8s ease';
             
-            showQuestion();
-            updateProgress();
+            // ⏰ بدء المؤقت
             startTimer();
             
-            // التمرير إلى قسم الاختبار
-            document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+            // ❓ عرض السؤال الأول
+            showQuestion();
+            
+            // 🎉 تأثيرات بصرية
+            createConfetti();
         }
 
-        // عرض السؤال الحالي
+        // ❓ عرض السؤال
         function showQuestion() {
-            const questionData = currentQuiz.questions[currentQuestion];
+            const question = currentQuiz.questions[currentQuestionIndex];
+            const progress = ((currentQuestionIndex + 1) / currentQuiz.questions.length) * 100;
             
-            document.getElementById('question').textContent = questionData.question;
+            // 📊 تحديث التقدم
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('progressText').textContent = `${currentQuestionIndex + 1}/${currentQuiz.questions.length}`;
             
-            const optionsContainer = document.getElementById('options');
+            // ❔ نص السؤال
+            document.getElementById('questionText').textContent = question.question;
+            document.getElementById('questionText').style.animation = 'slideIn 0.5s ease';
+            
+            // 🅰️🅱️🅲🅳 الخيارات
+            const optionsContainer = document.getElementById('optionsContainer');
             optionsContainer.innerHTML = '';
             
-            const optionLetters = ['أ', 'ب', 'ج', 'د'];
+            const optionLetters = ['🅰️', '🅱️', '🅲', '🅳'];
+            const prefixLetters = ['أ', 'ب', 'ج', 'د'];
             
-            questionData.choices.forEach((choice, index) => {
+            question.options.forEach((option, index) => {
                 const optionElement = document.createElement('div');
                 optionElement.className = 'option';
+                optionElement.dataset.index = index;
                 
-                // التحقق إذا كانت الإجابة مختارة
-                if (userAnswers[currentQuestion] === index) {
+                // تحديد إذا كانت مختارة
+                if (userAnswers[currentQuestionIndex] === index) {
                     optionElement.classList.add('selected');
                 }
                 
-                const optionPrefix = document.createElement('div');
-                optionPrefix.className = 'option-prefix';
-                optionPrefix.textContent = optionLetters[index];
+                // ✨ إضافة أنيميشن لكل خيار
+                optionElement.style.animationDelay = `${index * 0.1}s`;
+                optionElement.style.animation = 'slideIn 0.5s ease';
                 
-                const optionText = document.createElement('div');
-                optionText.className = 'option-text';
-                optionText.textContent = choice;
+                optionElement.innerHTML = `
+                    <div class="option-prefix">${optionLetters[index]} ${prefixLetters[index]}</div>
+                    <div class="option-text">${option}</div>
+                `;
                 
-                optionElement.appendChild(optionPrefix);
-                optionElement.appendChild(optionText);
-                
-                optionElement.onclick = () => selectOption(index);
+                optionElement.addEventListener('click', () => selectOption(index));
                 optionsContainer.appendChild(optionElement);
             });
             
-            // تحديث أزرار التنقل
-            document.getElementById('prev-button').disabled = currentQuestion === 0;
-            document.getElementById('next-button').textContent = 
-                currentQuestion === currentQuiz.questions.length - 1 ? 'إنهاء الاختبار' : 'التالي';
-                
-            document.getElementById('quiz-progress-text').textContent = 
-                `${currentQuestion + 1}/${currentQuiz.questions.length}`;
+            // ⏮️⏭️ تحديث أزرار التنقل
+            document.getElementById('prevBtn').disabled = currentQuestionIndex === 0;
+            document.getElementById('nextBtn').textContent = 
+                currentQuestionIndex === currentQuiz.questions.length - 1 ? '🏁 إنهاء الاختبار' : '⏭️ التالي';
         }
 
-        // اختيار إجابة
+        // ✅ اختيار إجابة
         function selectOption(optionIndex) {
-            if (userAnswers[currentQuestion] === optionIndex) {
-                // إلغاء التحديد إذا تم النقر على نفس الإجابة
-                delete userAnswers[currentQuestion];
+            const previousAnswer = userAnswers[currentQuestionIndex];
+            
+            // إذا كان الخيار نفسه، إلغاء التحديد
+            if (previousAnswer === optionIndex) {
+                userAnswers[currentQuestionIndex] = null;
             } else {
-                userAnswers[currentQuestion] = optionIndex;
+                userAnswers[currentQuestionIndex] = optionIndex;
+                
+                // ✨ تأثير بصر عند الاختيار
+                const optionElement = document.querySelector(`.option[data-index="${optionIndex}"]`);
+                optionElement.style.transform = 'scale(1.05)';
+                optionElement.style.boxShadow = '0 15px 40px rgba(255, 209, 102, 0.5)';
+                
+                setTimeout(() => {
+                    optionElement.style.transform = '';
+                    optionElement.style.boxShadow = '';
+                }, 300);
             }
             
             showQuestion();
         }
 
-        // السؤال التالي
+        // ⏭️ السؤال التالي
         function nextQuestion() {
-            if (currentQuestion < currentQuiz.questions.length - 1) {
-                currentQuestion++;
+            // 🔄 التأكد من اختيار إجابة
+            if (userAnswers[currentQuestionIndex] === null) {
+                // ✨ تأثير اهتزاز
+                document.getElementById('nextBtn').style.animation = 'shake 0.5s ease';
+                setTimeout(() => {
+                    document.getElementById('nextBtn').style.animation = '';
+                }, 500);
+                
+                // 💬 رسائل عشوائية
+                const messages = [
+                    "🎯 اختر إجابة أولاً!",
+                    "⚡ لم تختر إجابة بعد!",
+                    "⭐ يجب اختيار إجابة للمتابعة!"
+                ];
+                alert(`⚠️ ${messages[Math.floor(Math.random() * messages.length)]}`);
+                return;
+            }
+            
+            // ➡️ الانتقال للسؤال التالي أو إنهاء
+            if (currentQuestionIndex < currentQuiz.questions.length - 1) {
+                currentQuestionIndex++;
                 showQuestion();
+                
+                // ✨ تأثير بصر عند الانتقال
+                document.getElementById('quiz').style.animation = 'slideIn 0.5s ease';
             } else {
                 finishQuiz();
             }
-            updateProgress();
         }
 
-        // السؤال السابق
+        // ⏮️ السؤال السابق
         function prevQuestion() {
-            if (currentQuestion > 0) {
-                currentQuestion--;
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
                 showQuestion();
+                
+                // ✨ تأثير بصر عند الرجوع
+                document.getElementById('quiz').style.animation = 'slideIn 0.5s ease';
             }
-            updateProgress();
         }
 
-        // تحديث شريط التقدم
-        function updateProgress() {
-            const progress = ((currentQuestion + 1) / currentQuiz.questions.length) * 100;
-            document.getElementById('quiz-progress').style.width = `${progress}%`;
-        }
-
-        // بدء المؤقت
+        // ⏰ بدء المؤقت
         function startTimer() {
-            clearInterval(timerInterval);
-            
+            clearInterval(timer);
             updateTimerDisplay();
             
-            timerInterval = setInterval(() => {
+            timer = setInterval(() => {
                 timeLeft--;
                 updateTimerDisplay();
                 
                 if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
+                    clearInterval(timer);
                     finishQuiz(true);
                 }
             }, 1000);
         }
-        
-        // تحديث عرض المؤقت
+
+        // 🕒 تحديث عرض المؤقت
         function updateTimerDisplay() {
             const minutes = Math.floor(timeLeft / 60);
             const seconds = timeLeft % 60;
-            document.getElementById('timer').textContent = 
+            document.getElementById('timeDisplay').textContent = 
                 `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                
-            // تغيير لون المؤقت عندما يقل الوقت
-            const timerElement = document.getElementById('quiz-timer');
+            
+            // 🎨 تغيير لون المؤقت
+            const timerElement = document.getElementById('timer');
             timerElement.classList.remove('warning', 'danger');
             
-            if (timeLeft < 300) { // أقل من 5 دقائق
+            if (timeLeft < 300) {
                 timerElement.classList.add('warning');
             }
             
-            if (timeLeft < 60) { // أقل من دقيقة
+            if (timeLeft < 60) {
                 timerElement.classList.add('danger');
             }
         }
 
-        // إنهاء الاختبار وعرض النتائج
-        function finishQuiz(force = false) {
-            if (!force) {
-                const unansweredIndex = currentQuiz.questions.findIndex((q, i) => {
-                    return userAnswers[i] === undefined;
-                });
-
-                if (unansweredIndex !== -1) {
-                    currentQuestion = unansweredIndex;
-                    showQuestion();
-                    alert("⚽ هناك سؤال لم يتم الإجابة عليه!");
-                    return;
-                }
-            }
-
-            clearInterval(timerInterval);
-
-            // حساب النتيجة
-            quizScore = 0;
-            const resultsList = document.getElementById('results-list');
+        // 🏁 إنهاء الاختبار
+        function finishQuiz(timeout = false) {
+            clearInterval(timer);
+            
+            // 📊 حساب النتيجة
+            score = 0;
+            const resultsList = document.getElementById('resultsList');
             resultsList.innerHTML = '';
-
+            
             currentQuiz.questions.forEach((question, index) => {
-                const listItem = document.createElement('li');
                 const userAnswer = userAnswers[index];
-                const correctAnswer = question.correct;
+                const isCorrect = userAnswer === question.answer;
                 
-                const userChoice = userAnswer !== undefined ? question.choices[userAnswer] : "❌ لم تجب";
-                const correctChoice = question.choices[correctAnswer];
+                if (isCorrect) score++;
                 
-                const isCorrect = userAnswer === correctAnswer;
+                const listItem = document.createElement('li');
+                listItem.className = isCorrect ? 'result-item correct' : 'result-item incorrect';
+                listItem.style.animationDelay = `${index * 0.1}s`;
                 
-                if (isCorrect) {
-                    quizScore++;
-                    listItem.className = 'correct';
-                    listItem.innerHTML = `
-                        <div>
-                            <i class="fas fa-check-circle"></i> 
-                            <strong>السؤال ${index + 1}:</strong> ${question.question}
-                        </div>
-                        <div>
-                            <span style="color: var(--success);">✓ إجابتك صحيحة: ${userChoice}</span>
-                        </div>
-                    `;
-                } else {
-                    listItem.className = 'incorrect';
-                    listItem.innerHTML = `
-                        <div>
-                            <i class="fas fa-times-circle"></i> 
-                            <strong>السؤال ${index + 1}:</strong> ${question.question}
-                        </div>
-                        <div>
-                            <span style="color: var(--danger);">✗ إجابتك: ${userChoice}</span><br>
-                            <span style="color: var(--success);">✓ الإجابة الصحيحة: ${correctChoice}</span>
-                        </div>
-                    `;
-                }
-
+                const userChoice = userAnswer !== null ? question.options[userAnswer] : '❌ لم يتم الإجابة';
+                const correctChoice = question.options[question.answer];
+                
+                listItem.innerHTML = `
+                    <div>
+                        <strong>السؤال ${index + 1}:</strong><br>
+                        <small style="opacity: 0.8;">${question.question}</small>
+                    </div>
+                    <div>
+                        ${isCorrect ? 
+                            `<span style="color: #06D6A0; font-weight: 800;">✅ ${userChoice}</span>` : 
+                            `<span style="color: #EF476F; font-weight: 800;">❌ ${userChoice}</span><br>
+                             <span style="color: #06D6A0; font-weight: 800;">✅ ${correctChoice}</span>`
+                        }
+                    </div>
+                `;
+                
                 resultsList.appendChild(listItem);
             });
-
-            document.getElementById('results-score').textContent =
-                `${quizScore} / ${currentQuiz.questions.length}`;
-
+            
+            // 🏆 عرض النتيجة
+            document.getElementById('finalScore').textContent = `${score}/${currentQuiz.questions.length}`;
+            
+            // ✨ أنيميشن النتيجة
+            document.getElementById('finalScore').style.animation = 'bounce 1s ease';
+            
+            // 💬 رسالة النتيجة
+            const percentage = (score / currentQuiz.questions.length) * 100;
             let message = '';
-            const percentage = (quizScore / currentQuiz.questions.length) * 100;
-
-            if (percentage >= 90) {
-                message = '🏆 أنت أسطورة كرة القدم! معلوماتك مذهلة';
+            let emoji = '';
+            
+            if (timeout) {
+                message = '⏰ انتهى الوقت!';
+                emoji = '😅';
+            } else if (percentage >= 90) {
+                message = 'أنت أسطورة كرة القدم!';
+                emoji = '👑🏆⭐';
             } else if (percentage >= 70) {
-                message = '⭐ أداء رائع! أنت من عشاق كرة القدم الحقيقيين';
+                message = 'أداء رائع! أنت من عشاق كرة القدم';
+                emoji = '🔥💫🎯';
             } else if (percentage >= 50) {
-                message = '👍 مستوى جيد، يمكنك تحسين معلوماتك أكثر';
+                message = 'مستوى جيد، يمكنك التحسن أكثر';
+                emoji = '👍📚⚽';
             } else {
-                message = '📚 تحتاج إلى متابعة كرة القدم أكثر لتحسين معلوماتك';
+                message = 'تحتاج لمتابعة كرة القدم أكثر';
+                emoji = '🤔📖🎯';
             }
             
-            document.getElementById('results-message').innerHTML = 
-                `👏 أحسنت يا <span>${studentName}</span>! <br>${message}`;
+            document.getElementById('resultMessage').innerHTML = `
+                ${emoji} <br>
+                👏 أحسنت يا <span class="player-name">${playerName}</span>! <br>
+                🎯 ${message}
+            `;
             
-            // إرسال النتيجة إلى Google Sheets
-            sendResultToGoogleSheet(studentName, quizScore, currentQuiz.questions.length, currentQuiz.title);
-
-            // إظهار النتائج
-            document.getElementById('quiz-container').style.display = 'none';
-            document.getElementById('results-container').style.display = 'block';
+            // 📤 إرسال النتيجة
+            sendToGoogleSheets();
+            
+            // 🎉 عرض النتائج مع تأثيرات
+            showSection('results');
+            createConfetti();
+            
+            // ✨ أنيميشن النتائج
+            document.getElementById('results').style.animation = 'fadeIn 1s ease';
         }
 
-        // إعادة الاختبار
+        // 🔄 إعادة الاختبار
         function restartQuiz() {
-            initializeQuiz();
-        }
-
-        // العودة إلى قسم التحديات
-        function backToChallenges() {
-            document.getElementById('results-container').style.display = 'none';
-            document.getElementById('quiz').style.display = 'none';
-            document.getElementById('challenges').style.display = 'block';
+            // ✨ تأثير عند إعادة المحاولة
+            document.getElementById('results').style.animation = 'fadeOut 0.5s ease';
             
-            // التمرير إلى قسم التحديات
-            document.getElementById('challenges').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                startTimer();
+                currentQuestionIndex = 0;
+                userAnswers = new Array(currentQuiz.questions.length).fill(null);
+                score = 0;
+                showQuestion();
+                showSection('quiz');
+                document.getElementById('quiz').style.animation = 'slideIn 0.8s ease';
+            }, 500);
         }
 
-        // إرسال النتيجة إلى Google Sheets
-        function sendResultToGoogleSheet(name, score, total, quizType) {
+        // 📤 إرسال النتيجة إلى Google Sheets
+        function sendToGoogleSheets() {
             const currentTime = new Date().toLocaleString('ar-SA');
+            
+            const data = {
+                name: playerName,
+                score: score,
+                total: currentQuiz.questions.length,
+                time: currentTime,
+                "التاريخ": currentTime,
+                "Column 6": currentQuiz.title
+            };
+            
+            // ✨ رسالة إرسال متحركة
+            const sendingMsg = ["📤 جاري حفظ النتيجة...", "💾 حفظ البيانات...", "⚡ إرسال النتيجة..."];
+            console.log(sendingMsg[Math.floor(Math.random() * sendingMsg.length)]);
             
             fetch("https://sheetdb.io/api/v1/p3nl6e6pqpgvo", {
                 method: "POST",
-                body: JSON.stringify({
-                    name: name,
-                    score: score,
-                    total: total,
-                    time: currentTime,
-                    "التاريخ": currentTime,
-                    "Column 6": quizType
-                }),
                 headers: {
                     "Content-Type": "application/json"
-                }
+                },
+                body: JSON.stringify(data)
             })
-            .then(res => res.text())
-            .then(data => console.log("✅ تم حفظ النتيجة في Google Sheets"))
-            .catch(err => console.error("❌ خطأ في حفظ النتيجة:", err));
+            .then(response => response.json())
+            .then(data => {
+                console.log("✅ تم حفظ النتيجة بنجاح! 🎉");
+                
+                // ✨ تأثير نجاح
+                const successEmojis = ["🎊", "🏆", "⭐", "✨", "🎯"];
+                const randomEmoji = successEmojis[Math.floor(Math.random() * successEmojis.length)];
+                console.log(`${randomEmoji} النتيجة محفوظة في قاعدة البيانات`);
+            })
+            .catch(error => {
+                console.error("❌ خطأ في حفظ النتيجة:", error);
+                console.log("⚠️ لا تقلق، النتيجة معروضة لك محلياً");
+            });
         }
 
-        // تهيئة الموقع عند التحميل
-        window.onload = function() {
-            document.getElementById('quiz-container').style.display = 'none';
-            document.getElementById('results-container').style.display = 'none';
-            document.getElementById('quiz').style.display = 'none';
+        // 🎉 إنشاء تأثير كونفيتي
+        function createConfetti() {
+            const colors = ['#FF6B6B', '#4ECDC4', '#FFD166', '#06D6A0', '#7209B7'];
             
-            // جعل الاسم مطلوباً
-            const nameInput = document.getElementById('student-name');
-            if (nameInput) {
-                nameInput.addEventListener('input', function() {
-                    if (this.value.trim().length > 1) {
-                        this.style.borderColor = "var(--success)";
-                    } else {
-                        this.style.borderColor = "var(--accent)";
-                    }
-                });
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = `${Math.random() * 20 + 10}px`;
+                confetti.style.height = confetti.style.width;
+                confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                confetti.style.animationDelay = `${Math.random() * 5}s`;
+                
+                document.querySelector('.background-animation').appendChild(confetti);
+                
+                // إزالة الكونفيتي بعد الأنيميشن
+                setTimeout(() => {
+                    confetti.remove();
+                }, 7000);
             }
         }
+
+        // 🎬 تهيئة التطبيق
+        document.addEventListener('DOMContentLoaded', function() {
+            // 🏠 عرض القسم الرئيسي
+            showSection('home');
+            
+            // 📱 إدارة القائمة الجانبية
+            document.getElementById('menuBtn').addEventListener('click', function() {
+                document.getElementById('sidebar').classList.toggle('active');
+                this.style.transform = document.getElementById('sidebar').classList.contains('active') ? 
+                    'rotate(180deg)' : 'rotate(0)';
+            });
+            
+            // ❌ إغلاق القائمة عند النقر خارجها
+            document.addEventListener('click', function(event) {
+                const sidebar = document.getElementById('sidebar');
+                const menuBtn = document.getElementById('menuBtn');
+                
+                if (!sidebar.contains(event.target) && !menuBtn.contains(event.target) && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                    menuBtn.style.transform = 'rotate(0)';
+                }
+            });
+            
+            // ✨ تأثيرات إضافية للرموز
+            document.querySelectorAll('i.fa-futbol').forEach(icon => {
+                icon.style.animation = 'rotate 10s linear infinite';
+            });
+            
+            // 🎵 صوتية (اختياري)
+            const clickSound = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEAQB8AAEAfAAABAAgAZGF0YQ');
+            
+            document.querySelectorAll('button, .start-btn, .nav-btn, .action-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    // ✨ تأثير نقر بسيط
+                    button.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        button.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // 🌟 رسالة ترحيب
+            setTimeout(() => {
+                console.log("🌟 ⚽ مرحباً بكم في اختبار كرة القدم التفاعلي! 🎯 ✨");
+            }, 1000);
+        });
     </script>
 </body>
 </html>
